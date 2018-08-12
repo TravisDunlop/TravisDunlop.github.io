@@ -1,5 +1,6 @@
 :root {
   --main-color: rgb(26, 84, 34);
+  --link-color: rgb(224, 151, 22);
 }
 
 
@@ -67,6 +68,7 @@ body {
 }
 
 #header {
+    color: white;
     width: 900px;
     height: 190px;
     padding: 20px;
@@ -91,16 +93,31 @@ body {
     margin: 0px;
 }
 
-#header img {
+ img {
     float: left;
-    border-radius: 10px;
+    border-radius: 2px;
     padding-left: 20px;
     padding-right: 30px;
 }
 
-#header a {
-    color: inherit;
-    text-decoration: inherit;
+ a {
+  text-decoration: none;
+}
+
+a:link {
+    color: var(--link-color)
+}
+
+ a:visited {
+    color: var(--link-color)
+}
+
+ a:hover {
+    color: grey
+}
+
+ a:active {
+    color: var(--link-color)
 }
 
 #body {
@@ -127,19 +144,6 @@ body {
     font-size: 110%;
     margin: 0px;
     font-weight: bold;
-}
-
-#body a:link {
-    color: rgb(6,100,158);
-    text-decoration: none;
-}
-
-#body a:hover {
-    text-decoration: underline;
-}
-
-#body a:visited {
-    color: rgb(6,100,158);
 }
 
 #body dl {
@@ -179,6 +183,6 @@ div.body_content {
     color: rgb(51,51,51);
 }
 
-img.rounded-corners {
-	border-radius: 30px;
+img {
+    border-radius: 15%;
 }

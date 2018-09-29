@@ -40,13 +40,25 @@ class Main {
     this.video.setAttribute('autoplay', '');
     this.video.setAttribute('playsinline', '');
 
+    // Add container element to body
+    const container = document.createElement('div');
+    container.className = 'container'
+    document.body.appendChild(container);
+
     // Add video element to DOM
-    document.body.appendChild(this.video);
+    const left = document.createElement('div');
+    left.className = 'left'
+    left.appendChild(this.video);
+    container.appendChild(left);
 
     // Create training buttons and info texts
-    this.write_button("📱", 0);
-    this.write_button("🖊️", 1);
-    this.write_button("✌️", 2);
+    const right = document.createElement('div');
+    right.className = 'right'
+    this.write_button(right, "📱", 0);
+    this.write_button(right, "🖊️", 1);
+    this.write_button(right, "✌️", 2);
+
+    container.appendChild(right);
 
     // prediction text
     const div = document.createElement('div');
@@ -73,9 +85,9 @@ class Main {
     .then(() => this.start());
   }
 
-  write_button(button_text, i){
+  write_button(right, button_text, i){
     const div = document.createElement('div');
-    document.body.appendChild(div);
+    right.appendChild(div);
     div.style.marginBottom = '10px';
 
     // Create training button
